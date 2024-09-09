@@ -1,0 +1,79 @@
+// colors
+$clr-neutral-100: #fff;
+$clr-neutral-900: #1f3049;
+$clr-primary-400: #0066ff;
+
+// font-families
+$ff-sans: 'Open sans', sans-serif;
+
+// font-sizes
+$fs-900: 3.75rem;
+$fs-800: 3rem;
+$fs-600: 1.5rem;
+$fs-500: 1.3125rem;
+$fs-400: 1.125rem;
+
+// font-weights
+$fw-400: 400;
+$fw-700: 700;
+
+// sizing
+$size-8: 0.5rem;
+$size-12: 0.75rem;
+$size-16: 1rem;
+$size-20: 1.25rem;
+$size-32: 2rem;
+$size-36: 2.25rem;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  font-family: $ff-sans;
+  font-size: $fs-400;
+  font-weight: $fw-400;
+  color: $clr-neutral-900;
+  background-color: $clr-neutral-100;
+  text-align: center;
+}
+
+h1 {
+  font-size: $fs-900;
+  text-align: center;
+  line-height: $size-32;
+}
+
+.container {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+}
+
+.page-title {
+  color: $clr-primary-400;
+  font-size: $fs-900;
+  margin-block: $size-32;
+}
+
+.hosting_plans {
+  border: $size-8 solid $clr-primary-400;
+  display: flex;
+}
+
+.tier {
+  flex: 1;
+  display: grid;
+  padding: $size-36;
+
+  &__feature-list {
+    list-style: none;
+  }
+}

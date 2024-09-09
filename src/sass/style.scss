@@ -68,12 +68,72 @@ h1 {
   display: flex;
 }
 
+.inverted {
+  color: $clr-neutral-100;
+  background-color: $clr-primary-400;
+}
+
 .tier {
   flex: 1;
-  display: grid;
   padding: $size-36;
+  display: grid;
+  gap: $size-20;
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: $fw-700;
+    color: $clr-primary-400;
+
+    .inverted & {
+      color: $clr-neutral-100;
+      background-color: $clr-primary-400;
+    }
+  }
 
   &__feature-list {
     list-style: none;
+  }
+
+  &__list-item {
+    &:not(:last-child)::after {
+      content: '';
+      display: block;
+      height: 1px;
+      margin-block: $size-20;
+      background-color: $clr-neutral-900;
+      opacity: 0.2;
+    }
+  }
+
+  &__price {
+    font-size: $fs-800;
+    font-weight: $fw-700;
+
+    span {
+      font-weight: $fw-400;
+      font-size: $fs-600;
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: $fw-700;
+  color: $clr-neutral-100;
+  background-color: $clr-primary-400;
+  justify-self: center;
+  padding: 1rem 1.5rem;
+
+  .inverted & {
+    color: $clr-primary-400;
+    background-color: $clr-neutral-100;
+  }
+
+  &:hover,
+  &:focus {
+    color: $clr-neutral-100;
+    background-color: rgb($clr-neutral-900, 0.8);
   }
 }
